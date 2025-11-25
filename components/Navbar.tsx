@@ -54,7 +54,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
+            <div className="ml-10 flex items-center space-x-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href
                 return (
@@ -75,6 +75,12 @@ export default function Navbar() {
                   </Link>
                 )
               })}
+              <Link
+                href="/contact"
+                className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary-600 to-primary-400 text-white text-sm font-semibold rounded-lg hover:from-primary-700 hover:to-primary-500 transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                Plan Your Event
+              </Link>
             </div>
           </div>
 
@@ -130,6 +136,13 @@ export default function Navbar() {
                 </Link>
               )
             })}
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block px-4 py-3 text-base font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-400 rounded-lg hover:from-primary-700 hover:to-primary-500 transition-all duration-300 text-center mt-4"
+            >
+              Plan Your Event
+            </Link>
           </div>
         </div>
       )}
