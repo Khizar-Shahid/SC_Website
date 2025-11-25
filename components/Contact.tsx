@@ -79,8 +79,8 @@ export default function Contact() {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                  <p className="text-gray-600">123 Event Street</p>
-                  <p className="text-gray-600">City, State 12345</p>
+                  <p className="text-gray-600">Sutherland club venue, longton</p>
+                  <p className="text-gray-600">Stoke-on-Trent ST3 1JB</p>
                 </div>
               </div>
 
@@ -100,7 +100,8 @@ export default function Contact() {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600">(555) 123-4567</p>
+                  <p className="text-gray-600">07863378607</p>
+                  <p className="text-gray-600">07718904690</p>
                 </div>
               </div>
 
@@ -182,7 +183,7 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                  placeholder="(555) 123-4567"
+                  placeholder="07863378607"
                 />
               </div>
 

@@ -61,11 +61,11 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start">
                 <span className="mr-2">📍</span>
-                <span>123 Event Street<br />City, State 12345</span>
+                <span>Sutherland club venue, longton<br />Stoke-on-Trent ST3 1JB</span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-start">
                 <span className="mr-2">📞</span>
-                <span>(555) 123-4567</span>
+                <span>07863378607<br />07718904690</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">✉️</span>
