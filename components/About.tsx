@@ -21,7 +21,7 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
               <p>
-                Sutherland Event Studio stands as a beacon of sophistication and elegance in the world of event hosting. 
+                Sutherland Club Venue stands as a beacon of sophistication and elegance in the world of event hosting. 
                 For over a decade, we have been the premier destination for those who demand nothing but the extraordinary.
               </p>
               <p>

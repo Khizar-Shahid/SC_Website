@@ -8,7 +8,7 @@ export default function Testimonials() {
     {
       name: 'Sarah & Michael Johnson',
       event: 'Wedding',
-      text: 'Sutherland Event Studio made our wedding day absolutely perfect. The venue was stunning, and the staff went above and beyond to ensure everything ran smoothly. Our guests are still talking about how beautiful everything was!',
+      text: 'Sutherland Club Venue made our wedding day absolutely perfect. The venue was stunning, and the staff went above and beyond to ensure everything ran smoothly. Our guests are still talking about how beautiful everything was!',
       rating: 5,
       image: '👰',
     },

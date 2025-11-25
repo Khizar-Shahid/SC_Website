@@ -1,6 +1,6 @@
-# Sutherland Event Studio Website
+# Sutherland Club Venue Website
 
-A modern, responsive website for Sutherland Event Studio built with Next.js, React, and Tailwind CSS.
+A modern, responsive website for Sutherland Club Venue built with Next.js, React, and Tailwind CSS.
 
 ## Features
 

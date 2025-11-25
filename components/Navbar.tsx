@@ -47,7 +47,7 @@ export default function Navbar() {
             >
               Sutherland
               <span className={isScrolled || !isHomePage ? 'text-primary-600' : 'text-gold-400'}>
-                {' '}Event Studio
+                {' '}Club Venue
               </span>
             </Link>
           </div>

@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-between overflow-hidden"
     >
       {/* Background image with overlay */}
       <div className="absolute inset-0">
@@ -17,17 +17,41 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-        <div className="space-y-8 animate-fade-in">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-6 leading-tight">
-            Sutherland
-            <br />
-            <span className="text-gold-400">Event Studio</span>
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-gray-100 max-w-4xl mx-auto font-light tracking-wide">
-            Where elegance meets excellence. Creating unforgettable moments for your most special occasions.
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-between min-h-screen py-16 md:py-20">
+        {/* Top Section - Logo */}
+        <div className="text-center text-white pt-4 mb-8 md:mb-10">
+          <div className="flex flex-col items-center">
+            <p className="text-base md:text-lg lg:text-xl uppercase tracking-widest text-white font-medium">
+              SUTHERLAND CLUB VENUE
+            </p>
+          </div>
+        </div>
+
+        {/* Middle Section - Quote and Description */}
+        <div className="text-center text-white space-y-4 md:space-y-5 flex-1 flex flex-col justify-center">
+          {/* Quote Section */}
+          <div className="space-y-3 md:space-y-4">
+            <div className="inline-block px-5 py-2.5 md:px-6 md:py-3 bg-primary-600 rounded-lg">
+              <p className="text-base md:text-lg font-medium">
+                We May not have it all together,
+              </p>
+            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold uppercase leading-tight">
+              BUT TOGETHER
+              <br />
+              WE HAVE IT ALL
+            </h1>
+          </div>
+
+          {/* Description */}
+          <p className="text-sm md:text-base lg:text-lg text-white/90 max-w-3xl mx-auto font-light leading-relaxed">
+            Experience an atmosphere of elegance and artistry where every event is crafted to perfection.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+        </div>
+
+        {/* Bottom Section - Buttons */}
+        <div className="text-center text-white pb-6 md:pb-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/contact"
               className="px-10 py-5 bg-primary-600 text-white rounded-full font-semibold text-lg hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-primary-500/50"
@@ -44,23 +68,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Elegant scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-        <div className="flex flex-col items-center space-y-2">
-          <span className="text-white text-sm font-light tracking-widest uppercase">Scroll</span>
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
-      </div>
     </section>
   )
 }

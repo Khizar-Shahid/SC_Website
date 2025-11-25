@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
             <h3 className="text-3xl font-serif font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Sutherland Event Studio
+              Sutherland Club Venue
             </h3>
             <p className="text-gray-400 leading-relaxed">
               Creating unforgettable experiences for over a decade. Where elegance meets excellence.
@@ -69,7 +69,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <span className="mr-2">✉️</span>
-                <span>info@sutherlandeventstudio.com</span>
+                <span>info@sutherlandclubvenue.com</span>
               </li>
             </ul>
           </div>

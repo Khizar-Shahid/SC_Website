@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'Sutherland Event Studio',
-  description: 'Premier event venue for weddings, corporate events, and special occasions',
+  title: 'Sutherland Club Venue',
+  description: 'Sutherland Club Venue - Premier event venue for weddings, corporate events, and special occasions',
 }
 
 export default function RootLayout({
