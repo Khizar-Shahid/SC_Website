@@ -52,7 +52,6 @@ export default function Footer() {
               <li className="text-gray-400">Corporate Events</li>
               <li className="text-gray-400">Private Parties</li>
               <li className="text-gray-400">Event Planning</li>
-              <li className="text-gray-400">Catering</li>
             </ul>
           </div>
 
