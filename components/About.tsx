@@ -57,14 +57,16 @@ export default function About() {
           </div>
           
           <div className="relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-purple-700"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="text-8xl mb-4">✨</div>
-                  <p className="text-xl font-serif">Elegant Venue</p>
-                </div>
-              </div>
+            <div
+              className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
+              style={{
+                backgroundImage: "url('/IMG-20251126-WA0033.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              {/* Subtle overlay for readability */}
+              <div className="absolute inset-0 bg-black/20"></div>
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold-400/20 rounded-full blur-3xl"></div>

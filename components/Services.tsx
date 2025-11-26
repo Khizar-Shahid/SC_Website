@@ -154,13 +154,16 @@ export default function Services() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-purple-600 to-indigo-700 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="text-8xl mb-4">🏢</div>
-                    <p className="text-xl font-serif">Corporate Venue</p>
-                  </div>
-                </div>
+              <div
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+                style={{
+                  backgroundImage: "url('/IMG-20251126-WA0039.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                {/* Light overlay to keep text readable if we add it later */}
+                <div className="absolute inset-0 bg-black/10"></div>
               </div>
             </div>
           </div>
@@ -172,13 +175,16 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-rose-600 to-purple-700 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="text-8xl mb-4">💕</div>
-                    <p className="text-xl font-serif">Romantic Setup</p>
-                  </div>
-                </div>
+              <div
+                className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
+                style={{
+                  backgroundImage: "url('/IMG-20251126-WA0021.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                {/* Light overlay */}
+                <div className="absolute inset-0 bg-black/20"></div>
               </div>
             </div>
             <div className="order-1 lg:order-2">

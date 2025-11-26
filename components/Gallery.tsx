@@ -7,15 +7,60 @@ export default function Gallery() {
 
   // Gallery images with different aspect ratios for masonry effect
   const images = [
-    { id: 1, aspect: 'aspect-square', alt: 'Elegant wedding ceremony' },
-    { id: 2, aspect: 'aspect-[4/3]', alt: 'Corporate event setup' },
-    { id: 3, aspect: 'aspect-square', alt: 'Beautiful reception hall' },
-    { id: 4, aspect: 'aspect-[3/4]', alt: 'Private party celebration' },
-    { id: 5, aspect: 'aspect-square', alt: 'Elegant dining area' },
-    { id: 6, aspect: 'aspect-[4/3]', alt: 'Wedding reception' },
-    { id: 7, aspect: 'aspect-square', alt: 'Event decoration' },
-    { id: 8, aspect: 'aspect-[3/4]', alt: 'Corporate conference' },
-    { id: 9, aspect: 'aspect-square', alt: 'Special celebration' },
+    {
+      id: 1,
+      aspect: 'aspect-[4/3]',
+      alt: 'Elegant outdoor celebration with string lights',
+      src: '/IMG-20251126-WA0016.jpg',
+    },
+    {
+      id: 2,
+      aspect: 'aspect-[3/4]',
+      alt: 'Romantic beachside proposal setup',
+      src: '/IMG-20251126-WA0021.jpg',
+    },
+    {
+      id: 3,
+      aspect: 'aspect-[4/3]',
+      alt: 'Corporate conference with presentation stage',
+      src: '/IMG-20251126-WA0032.jpg',
+    },
+    {
+      id: 4,
+      aspect: 'aspect-[4/3]',
+      alt: 'Luxury indoor wedding reception',
+      src: '/IMG-20251126-WA0033.jpg',
+    },
+    {
+      id: 5,
+      aspect: 'aspect-[4/3]',
+      alt: 'Romantic engagement dinner setup',
+      src: '/IMG-20251126-WA0038.jpg',
+    },
+    {
+      id: 6,
+      aspect: 'aspect-[4/3]',
+      alt: 'Elegant ballroom corporate event',
+      src: '/IMG-20251126-WA0039.jpg',
+    },
+    {
+      id: 7,
+      aspect: 'aspect-[4/3]',
+      alt: 'Glamorous chandelier-lit reception',
+      src: '/IMG-20251126-WA0034.jpg',
+    },
+    {
+      id: 8,
+      aspect: 'aspect-[3/4]',
+      alt: 'Intimate candlelit celebration',
+      src: '/IMG-20251126-WA0035.jpg',
+    },
+    {
+      id: 9,
+      aspect: 'aspect-[4/3]',
+      alt: 'Stylish corporate networking event',
+      src: '/IMG-20251126-WA0036.jpg',
+    },
   ]
 
   return (
@@ -38,9 +83,12 @@ export default function Gallery() {
               onClick={() => setSelectedImage(image.id)}
               className={`relative ${image.aspect} overflow-hidden rounded-xl cursor-pointer group shadow-lg hover:shadow-2xl transition-all duration-500`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-purple-600 to-pink-500 flex items-center justify-center">
-                <span className="text-white text-6xl opacity-80">📷</span>
-              </div>
+              {/* Actual image */}
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+              />
               
               {/* Overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
@@ -54,7 +102,10 @@ export default function Gallery() {
         </div>
 
         {/* Image Modal */}
-        {selectedImage && (
+        {selectedImage && (() => {
+          const activeImage = images.find((img) => img.id === selectedImage)
+          if (!activeImage) return null
+          return (
           <div
             className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={() => setSelectedImage(null)}
@@ -69,15 +120,17 @@ export default function Gallery() {
               >
                 ×
               </button>
-              <div className="w-full aspect-video bg-gradient-to-br from-primary-500 via-purple-600 to-pink-500 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="text-9xl mb-4">📷</div>
-                  <p className="text-2xl font-serif">{images.find(img => img.id === selectedImage)?.alt}</p>
-                </div>
+              <div className="w-full aspect-video rounded-xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           </div>
-        )}
+          )
+        })()}
       </div>
     </section>
   )
