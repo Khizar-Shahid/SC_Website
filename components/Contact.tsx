@@ -12,20 +12,48 @@ export default function Contact() {
     guests: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We will get back to you soon.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      eventType: '',
-      date: '',
-      guests: '',
-      message: '',
-    })
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          eventType: '',
+          date: '',
+          guests: '',
+          message: '',
+        })
+        // Reset status after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        setSubmitStatus('error')
+        console.error('Error:', data.error)
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      console.error('Error submitting form:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (
@@ -267,10 +295,25 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-primary-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              disabled={isSubmitting}
+              className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-primary-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
-              Send Inquiry
+              {isSubmitting ? 'Sending...' : 'Send Inquiry'}
             </button>
+            
+            {submitStatus === 'success' && (
+              <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                <p className="font-semibold">✓ Thank you for your inquiry!</p>
+                <p className="text-sm mt-1">We will get back to you soon.</p>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                <p className="font-semibold">✗ Something went wrong</p>
+                <p className="text-sm mt-1">Please try again or contact us directly.</p>
+              </div>
+            )}
           </form>
         </div>
       </div>
